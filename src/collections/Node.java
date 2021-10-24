@@ -1,4 +1,4 @@
-package model;
+package collections;
 
 public class Node<T extends Comparable<T>> {
 	
