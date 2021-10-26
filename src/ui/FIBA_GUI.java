@@ -63,7 +63,6 @@ public class FIBA_GUI {
 	@FXML
     public void importData(ActionEvent event) {
 		
-		System.out.print("Entra");
 		FileChooser fileChooser = new FileChooser();
     	fileChooser.setTitle("Open Resource File");
     	File file = fileChooser.showOpenDialog(null);
@@ -74,9 +73,9 @@ public class FIBA_GUI {
 				    alert.setTitle("FIBA");
 				    alert.setHeaderText("Annoucement");
 				    alert.setContentText("The Players Have been succesfully imported");
-		
-				    alert.showAndWait();
 				    initializeAllPlayersTableview();
+				    alert.showAndWait();
+				 
 				    playerTable.refresh();
 			} catch (IOException e) {
 				 Alert alert = new Alert(AlertType.INFORMATION);

@@ -27,8 +27,13 @@ public class FIBA {
 			
 			String[]parts = line.split(";");
 			Player tmp = new Player(parts[0],Integer.parseInt(parts[1]), parts[2], Double.parseDouble(parts[3]), Double.parseDouble(parts[4]), Double.parseDouble(parts[5]), Double.parseDouble(parts[6]), Double.parseDouble(parts[7]));
+			if(parts[0].equals("0")) {
+				
+			}else {
 			allPlayers.add(tmp);
+			}
 			line = br.readLine();
+			
 		}
 		br.close();
 		
