@@ -9,13 +9,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="324.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="400.0" style="-fx-background-color: #001621#001621;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane layoutX="200.0" layoutY="293.0" prefHeight="14.0" prefWidth="200.0" style="-fx-background-color: #ffffff#ffffff;" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="293.0" />
-            <Button layoutX="261.0" layoutY="101.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Modify" textAlignment="CENTER">
+            <Button fx:id="modifyButton" layoutX="261.0" layoutY="101.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Modify" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
@@ -30,12 +29,12 @@
                   <Image url="@pictures/deleteWhite.png" />
                </image>
             </ImageView>
-            <Button layoutX="261.0" layoutY="191.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Delete" textAlignment="CENTER">
+            <Button fx:id="deleteButton" layoutX="261.0" layoutY="191.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Delete" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
             </Button>
-            <Button layoutX="261.0" layoutY="35.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Import" textAlignment="CENTER">
+            <Button fx:id="importButton" layoutX="261.0" layoutY="35.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="112.0" text="Import" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
@@ -55,16 +54,16 @@
       </AnchorPane>
    </left>
    <center>
-      <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="playerTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <columns>
-          <TableColumn prefWidth="75.0" text="Name" />
-          <TableColumn prefWidth="75.0" text="Age" />
-            <TableColumn prefWidth="75.0" text="Team" />
-            <TableColumn prefWidth="100.0" text="Points Per Game" />
-            <TableColumn prefWidth="111.0" text="Bounces Per Game" />
-            <TableColumn prefWidth="136.0" text="Assistences Per Game" />
-            <TableColumn prefWidth="112.0" text="Steals Per Game" />
-            <TableColumn prefWidth="115.0" text="Blocks Per Game" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="ageColumn" prefWidth="75.0" text="Age" />
+            <TableColumn fx:id="teamColumn" prefWidth="75.0" text="Team" />
+            <TableColumn fx:id="pointsColumn" prefWidth="100.0" text="Points Per Game" />
+            <TableColumn fx:id="bouncesColumn" prefWidth="111.0" text="Bounces Per Game" />
+            <TableColumn fx:id="assistencesColumn" prefWidth="136.0" text="Assistences Per Game" />
+            <TableColumn fx:id="stealsColumn" prefWidth="112.0" text="Steals Per Game" />
+            <TableColumn fx:id="blocksColumn" prefWidth="115.0" text="Blocks Per Game" />
         </columns>
       </TableView>
    </center>
