@@ -1,54 +1,34 @@
 package collections;
-public class Node<T extends Comparable<T>> {
-	
+public class Node<T>{
 	private T value;
 	private Node<T> left; 
-	private Node<T> rigth;
+	private Node<T> right;
 	private Node<T> parent;
-	
-	
 	public Node(T x) {
 		value = x;
-		this.left = null;
-		this.rigth= null;
 	}
-
 	public T getValue() {
 		return value;
 	}
-
-	public void setValue(T value) {
-		this.value = value;
+	public void setValue(T v) {
+		value = v;
 	}
-
 	public Node<T> getLeft() {
 		return left;
 	}
-
-	public void setLeft(Node<T> left) {
-		this.left = left;
+	public void setLeft(Node<T> l) {
+		left = l;
 	}
-
-	public Node<T> getRigth() {
-		return rigth;
+	public Node<T> getRight() {
+		return right;
 	}
-
-	public void setRigth(Node<T> rigth) {
-		this.rigth = rigth;
+	public void setRight(Node<T> r) {
+		right = r;
 	}
-	
 	public Node<T> getParent() {
 		return parent;
 	}
-
-	public void setParent(Node<T> parent) {
-		this.parent = parent;
+	public void setParent(Node<T> p) {
+		parent = p;
 	}
-	
-	public int compareTo(T newValue) {
-		return value.compareTo(newValue); 	
-    }
-
-	
-	
 }
