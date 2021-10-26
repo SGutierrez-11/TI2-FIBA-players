@@ -30,7 +30,7 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void insertTest2() {
 		 setupStage2();
 		 
-		 tree.insert(3);
+		 tree.add(3);
 		 
 		 assertEquals(tree.root.getValue(), (Integer) 3);
 	 }
@@ -39,8 +39,8 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void insertTest3() {
 		 setupStage2();
 		 
-		 tree.insert(5);
-		 tree.insert(3);
+		 tree.add(5);
+		 tree.add(3);
 		 
 		 assertEquals(tree.root.getValue(), (Integer) 5);
 		 assertEquals(tree.root.getLeft().getValue(), (Integer) 3);
@@ -50,9 +50,9 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void insertTest4() {
 		 setupStage2();
 		 
-		 tree.insert(10);
-		 tree.insert(9);
-		 tree.insert(14);
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
 		 
 		 assertEquals(tree.root.getValue(), (Integer) 10);
 		 assertEquals(tree.root.getLeft().getValue(), (Integer) 9);
@@ -72,7 +72,7 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void searchTest2() {
 		 setupStage2();
 		 
-		 tree.insert(3);
+		 tree.add(3);
 		 
 		 assertNotNull(tree.search(3));
 	 }
@@ -81,13 +81,13 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void searchTest3() {
 		 setupStage2();
 		 
-		 tree.insert(10);
-		 tree.insert(9);
-		 tree.insert(14);
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
 		 
 		 assertNotNull(tree.search(10));
 		 assertEquals(tree.search(9), tree.root.getLeft());
-		 assertEquals(tree.search(14), tree.root.getRigth());
+		 assertEquals(tree.search(14), tree.root.getRight());
 	 }
 	 
 	 

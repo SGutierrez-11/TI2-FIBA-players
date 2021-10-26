@@ -60,20 +60,20 @@ public class BST<T extends Comparable<T>> {
 			}
 		}
 	}
-	public T searchNode(T item) {
+	public T search(T item) {
 		if (root == null)
 			return null;
 		else
-			return searchNode(item, root);
+			return search(item, root);
 	}
-	private T searchNode(T item, Node<T> parent) {
+	private T search(T item, Node<T> parent) {
 		if (root == null)
 			return null;
 		else if (item.compareTo(parent.getValue())==0)
 			return parent.getValue();
 		else if (item.compareTo(parent.getValue()) < 0)
-			return searchNode(item, parent.getLeft());
+			return search(item, parent.getLeft());
 		else
-			return searchNode(item, parent.getRight());
+			return search(item, parent.getRight());
 	}
 }
