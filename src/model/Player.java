@@ -1,6 +1,8 @@
 package model;
 
-public class Player implements Comparable<Object>{
+import java.util.Comparator;
+
+public class Player implements Comparator<Object>{
 
 	String name;
 	
@@ -32,8 +34,8 @@ public class Player implements Comparable<Object>{
 	}
 
 	@Override
-	public int compareTo(Object arg0) {
-		
+	public int compare(Object arg0, Object arg1) {
+		// TODO Auto-generated method stub
 		return 0;
 	}
 	
