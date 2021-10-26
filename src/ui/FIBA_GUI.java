@@ -3,16 +3,20 @@ package ui;
 import java.io.File;
 import java.io.IOException;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import model.FIBA;
+import model.Player;
 
 public class FIBA_GUI {
 
@@ -21,31 +25,31 @@ public class FIBA_GUI {
     private BorderPane mainPane;
 
     @FXML
-    private TableView<?> playerTable;
+    private TableView<Player> playerTable;
 
     @FXML
-    private TableColumn<?, ?> nameColumn;
+    private TableColumn<Player, String> nameColumn;
 
     @FXML
-    private TableColumn<?, ?> ageColumn;
+    private TableColumn<Player, Integer> ageColumn;
 
     @FXML
-    private TableColumn<?, ?> teamColumn;
+    private TableColumn<Player, String> teamColumn;
 
     @FXML
-    private TableColumn<?, ?> pointsColumn;
+    private TableColumn<Player, Double> pointsColumn;
 
     @FXML
-    private TableColumn<?, ?> bouncesColumn;
+    private TableColumn<Player, Double> bouncesColumn;
 
     @FXML
-    private TableColumn<?, ?> assistencesColumn;
+    private TableColumn<Player, Double> assistencesColumn;
 
     @FXML
-    private TableColumn<?, ?> stealsColumn;
+    private TableColumn<Player, Double> stealsColumn;
 
     @FXML
-    private TableColumn<?, ?> blocksColumn;
+    private TableColumn<Player, Double> blocksColumn;
 
 	
 	private FIBA fiba;
@@ -69,8 +73,10 @@ public class FIBA_GUI {
 				    alert.setTitle("FIBA");
 				    alert.setHeaderText("Annoucement");
 				    alert.setContentText("The Players Have been succesfully imported");
-				
+				    initializeAllPlayersTableview();
 				    alert.showAndWait();
+				 
+				    playerTable.refresh();
 			} catch (IOException e) {
 				 Alert alert = new Alert(AlertType.INFORMATION);
 				    alert.setTitle("FIBA");
@@ -94,6 +100,21 @@ public class FIBA_GUI {
     @FXML
     public void openModify(ActionEvent event) {
 
+    }
+    public void initializeAllPlayersTableview() {
+    	
+    	ObservableList<Player> observableList;
+    	observableList = FXCollections.observableArrayList(fiba.getAllPlayers());
+    	playerTable.setItems(observableList);
+    	 
+    	nameColumn.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
+    	ageColumn.setCellValueFactory(new PropertyValueFactory<Player, Integer>("Age"));
+    	teamColumn.setCellValueFactory(new PropertyValueFactory<Player,String>("team"));
+    	bouncesColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("bouncesPerGame"));
+    	blocksColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("blocksPerGame"));
+    	pointsColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("pointsPerGame"));
+    	assistencesColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("assistencesPerGame"));
+    	stealsColumn.setCellValueFactory(new PropertyValueFactory<Player, Double>("stealsPerGame"));
     }
 	
 }
