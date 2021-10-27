@@ -67,11 +67,11 @@ public class BST<T extends Comparable<T>> {
 			return search(item, root);
 	}
 	private T search(T item, Node<T> parent) {
-		if (root == null)
+		if (parent == null)
 			return null;
-		else if (item.compareTo(parent.getValue())==0)
-			return parent.getValue();
-		else if (item.compareTo(parent.getValue()) < 0)
+		else if (item.compareTo(parent.getValue())==0) {
+			
+		}else if (item.compareTo(parent.getValue()) < 0)
 			return search(item, parent.getLeft());
 		else
 			return search(item, parent.getRight());
