@@ -76,11 +76,13 @@ public class BST<T extends Comparable<T>> {
 		else
 			return search(item, parent.getRight());
 	}
-	public int getHeight(Node<T> current) {
+	public int getHeight() {
+		return getHeight(root);
+	}
+	protected int getHeight(Node<T> current) {
 		if (current == null)
 			return 0;
 		else
 			return Math.max(getHeight(current.getLeft()), getHeight(current.getRight()));
-		
 	}
 }
