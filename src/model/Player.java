@@ -34,9 +34,11 @@ public class Player implements Comparator<Object>{
 	}
 
 	@Override
-	public int compare(Object arg0, Object arg1) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int compare(Player firstPlayer, Player secondPlayer) {
+		
+		
+		
+		
 	}
 
 	public String getName() {
@@ -105,4 +107,64 @@ public class Player implements Comparator<Object>{
 	
 	
 	
+	}
+	class ComparePlayer{
+		
+		//Identificar guide:
+		//1 = points per game
+		//2 = bounces per game
+		//3 = assistences per game
+		//4 = steals per game
+		//5 = blocks per game
+		
+		
+		public int compare(Player o1, Player o2, int identificator) {
+		
+			int toReturn = 0;
+			
+			switch(identificator) {
+			
+			case 1: 
+				toReturn = Double.compare(o1.getPointsPerGame(), o2.getPointsPerGame());
+				break;
+			case 2:
+				toReturn = Double.compare(o1.getBouncesPerGame(), o2.getBouncesPerGame());
+				break;
+			case 3:
+				toReturn = Double.compare(o1.getAssistencesPerGame(), o2.getAssistencesPerGame());
+				break;
+			case 4:
+				toReturn = Double.compare(o1.getStealsPerGame(), o2.getStealsPerGame());
+				break;
+			case 5:
+				toReturn = Double.compare(o1.getBlocksPerGame(), o2.getBlocksPerGame());
+			}
+			
+			return toReturn;
+		}
+		public int compare(Player o1, Player o2, int identificator, int identificator2) {
+			
+			int toReturn = 0;
+			
+			switch(identificator) {
+			
+			case 1: 
+				toReturn = Double.compare(o1.getPointsPerGame(), o2.getPointsPerGame());
+				break;
+			case 2:
+				toReturn = Double.compare(o1.getBouncesPerGame(), o2.getBouncesPerGame());
+				break;
+			case 3:
+				toReturn = Double.compare(o1.getAssistencesPerGame(), o2.getAssistencesPerGame());
+				break;
+			case 4:
+				toReturn = Double.compare(o1.getStealsPerGame(), o2.getStealsPerGame());
+				break;
+			case 5:
+				toReturn = Double.compare(o1.getBlocksPerGame(), o2.getBlocksPerGame());
+			}
+			
+			return toReturn;
+		}
+		
 	}
