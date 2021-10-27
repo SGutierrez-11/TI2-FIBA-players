@@ -70,7 +70,7 @@ public class BST<T extends Comparable<T>> {
 		if (parent == null)
 			return null;
 		else if (item.compareTo(parent.getValue())==0) {
-			
+			return parent.getValue();
 		}else if (item.compareTo(parent.getValue()) < 0)
 			return search(item, parent.getLeft());
 		else
