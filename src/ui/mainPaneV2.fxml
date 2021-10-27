@@ -21,12 +21,12 @@
             </Button>
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pictures/modifie.png" />
+                  <Image url="@../ui.pictures/modifie.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pictures/deleteWhite.png" />
+                  <Image url="@../ui.pictures/deleteWhite.png" />
                </image>
             </ImageView>
             <Button layoutX="261.0" layoutY="191.0" mnemonicParsing="false" onAction="#openDeletePane" prefHeight="40.0" prefWidth="112.0" text="Delete" textAlignment="CENTER">
@@ -41,12 +41,12 @@
             </Button>
             <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pictures/importWhite.png" />
+                  <Image url="@../ui.pictures/importWhite.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="332.0" fitWidth="152.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@pictures/fiba3.jpeg" />
+                  <Image url="@../ui.pictures/fiba3.jpeg" />
                </image>
             </ImageView>
             <AnchorPane layoutX="151.0" layoutY="159.0" prefHeight="7.0" prefWidth="250.0" style="-fx-background-color: white;" />

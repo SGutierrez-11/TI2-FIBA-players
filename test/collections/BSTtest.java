@@ -56,7 +56,7 @@ public class BSTtest<T extends Comparable<T>> {
 		 
 		 assertEquals(tree.root.getValue(), (Integer) 10);
 		 assertEquals(tree.root.getLeft().getValue(), (Integer) 9);
-		 assertEquals(tree.root.getRigth().getValue(), (Integer) 14);
+		 assertEquals(tree.root.getRight().getValue(), (Integer) 14);
 	 }
 	 
 	 @Test
