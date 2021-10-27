@@ -1,15 +1,15 @@
 package collections;
 public class BST<T extends Comparable<T>> {
 	Node<T> root;
-	public boolean add(T item) {
+	public Node<T> add(T item) {
 		if (root == null) {
 			root = new Node<T>(item);
-			return true;
+			return root;
 		}else {
 			return add(item, root, null);
 		}
 	}
-	private boolean add(T item, Node<T> current, Node<T> parent) {
+	private Node<T> add(T item, Node<T> current, Node<T> parent) {
 		if (current == null) {
 			current = new Node<T>(item);
 			current.setParent(parent);
@@ -17,7 +17,7 @@ public class BST<T extends Comparable<T>> {
 				parent.setLeft(current);
 			else
 				parent.setRight(current);
-			return true;
+			return current;
 		}else if (item.compareTo(current.getValue()) < 0)
 			return add(item, current.getLeft(), current);
 		else
@@ -69,12 +69,9 @@ public class BST<T extends Comparable<T>> {
 	private T search(T item, Node<T> parent) {
 		if (parent == null)
 			return null;
-		else if (item.compareTo(parent.getValue())==0) {
-			if (parent.getLeft()!= null && item.compareTo(parent.getValue())==0)
-				return search(item, parent.getLeft());
-			else
-				return parent.getValue();
-		}else if (item.compareTo(parent.getValue()) < 0)
+		else if (item.compareTo(parent.getValue())==0)
+			return parent.getValue();
+		else if (item.compareTo(parent.getValue()) < 0)
 			return search(item, parent.getLeft());
 		else
 			return search(item, parent.getRight());

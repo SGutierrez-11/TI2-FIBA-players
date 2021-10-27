@@ -1,17 +1,23 @@
 package collections;
+import java.util.ArrayList;
 public class Node<T>{
-	private T value;
+	private ArrayList<T> nodes;
 	private Node<T> left; 
 	private Node<T> right;
 	private Node<T> parent;
 	public Node(T x) {
-		value = x;
+		nodes = new ArrayList<>();
+		nodes.add(x);
 	}
 	public T getValue() {
-		return value;
+		if (nodes.size() == 1)
+			return nodes.get(0);
+		else
+			return null;
 	}
 	public void setValue(T v) {
-		value = v;
+		if (nodes.size() == 1)
+			nodes.set(0, v);
 	}
 	public Node<T> getLeft() {
 		return left;
