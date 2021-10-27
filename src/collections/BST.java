@@ -70,7 +70,10 @@ public class BST<T extends Comparable<T>> {
 		if (parent == null)
 			return null;
 		else if (item.compareTo(parent.getValue())==0) {
-			return parent.getValue();
+			if (parent.getLeft()!= null && item.compareTo(parent.getValue())==0)
+				return search(item, parent.getLeft());
+			else
+				return parent.getValue();
 		}else if (item.compareTo(parent.getValue()) < 0)
 			return search(item, parent.getLeft());
 		else
@@ -83,6 +86,6 @@ public class BST<T extends Comparable<T>> {
 		if (current == null)
 			return 0;
 		else
-			return Math.max(getHeight(current.getLeft()), getHeight(current.getRight()));
+			return Math.max(getHeight(current.getLeft()), getHeight(current.getRight()))+1;
 	}
 }
