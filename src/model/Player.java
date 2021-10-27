@@ -2,7 +2,7 @@ package model;
 
 import java.util.Comparator;
 
-public class Player implements Comparator<Object>{
+public class Player{
 
 	String name;
 	
@@ -33,13 +33,6 @@ public class Player implements Comparator<Object>{
 		
 	}
 
-	@Override
-	public int compare(Player firstPlayer, Player secondPlayer) {
-		
-		
-		
-		
-	}
 
 	public String getName() {
 		return name;
@@ -150,6 +143,7 @@ public class Player implements Comparator<Object>{
 			
 			case 1: 
 				toReturn = Double.compare(o1.getPointsPerGame(), o2.getPointsPerGame());
+				
 				break;
 			case 2:
 				toReturn = Double.compare(o1.getBouncesPerGame(), o2.getBouncesPerGame());
