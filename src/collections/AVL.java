@@ -7,11 +7,11 @@ public class AVL<T extends Comparable<T>> extends BST<T> {
 			rebalance(added);
 		return added;
 	}
-	@Override
+	/*@Override
 	public boolean delete(T item) {
 		boolean value = super.delete(item);
 		return value;
-	}
+	}*/
 	private void rebalance(Node<T> current) {
 		boolean balanced = false;
 		while(!current.equals(root) && !balanced){

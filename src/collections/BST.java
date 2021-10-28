@@ -1,4 +1,6 @@
 package collections;
+import java.util.ArrayList;
+import java.util.List;
 public class BST<T extends Comparable<T>> {
 	Node<T> root;
 	public Node<T> add(T item) {
@@ -13,17 +15,21 @@ public class BST<T extends Comparable<T>> {
 		if (current == null) {
 			current = new Node<T>(item);
 			current.setParent(parent);
-			if (item.compareTo(parent.getValue()) < 0)
+			if (item.compareTo(parent.getValue().get(0)) < 0)
 				parent.setLeft(current);
 			else
 				parent.setRight(current);
 			return current;
-		}else if (item.compareTo(current.getValue()) < 0)
+		}else if (item.compareTo(current.getValue().get(0)) < 0)
 			return add(item, current.getLeft(), current);
-		else
+		else if (item.compareTo(current.getValue().get(0)) > 0)
 			return add(item, current.getRight(), current);
+		else {
+			current.add(item);
+			return current;
+		}
 	}
-	public boolean delete(T item) {
+	/*public boolean delete(T item) {
 		if (root == null)
 			return false;
 		else
@@ -32,9 +38,9 @@ public class BST<T extends Comparable<T>> {
 	private boolean delete(T item, Node<T> current, Node<T> parent) {
 		if (current == null)
 			return false;
-		else if (item.compareTo(current.getValue()) < 0)
+		else if (item.compareTo(current.getValue().get(0)) < 0)
 			return delete(item, current.getRight(), current);
-		else if (item.compareTo(current.getValue()) > 0)
+		else if (item.compareTo(current.getValue().get(0)) > 0)
 			return delete(item, current.getLeft(), current);
 		else {
 			if (current.getLeft() == null && current.getRight() == null) {
@@ -59,22 +65,72 @@ public class BST<T extends Comparable<T>> {
 				return true;
 			}
 		}
-	}
-	public T search(T item) {
+	}*/
+	public Node<T> search(T item) {
 		if (root == null)
 			return null;
 		else
 			return search(item, root);
 	}
-	private T search(T item, Node<T> parent) {
+	private Node<T> search(T item, Node<T> parent) {
 		if (parent == null)
 			return null;
-		else if (item.compareTo(parent.getValue())==0)
-			return parent.getValue();
-		else if (item.compareTo(parent.getValue()) < 0)
+		else if (item.compareTo(parent.getValue().get(0))==0)
+			return parent;
+		else if (item.compareTo(parent.getValue().get(0)) < 0)
 			return search(item, parent.getLeft());
 		else
 			return search(item, parent.getRight());
+	}
+	public List<T> getGreaterThan(Node<T> node){
+		List<T> list = new ArrayList<>();
+		return getGreaterThan(node, list);
+	}
+	private List<T> getGreaterThan(Node<T> node, List<T> list){
+		list.addAll(node.getValue());
+		list.addAll(inOrderRight(node.getRight(), list));
+		if (node.getParent().getLeft().equals(node))
+			list.addAll(getGreaterThan(node.getParent(), list));
+		return list;
+	}
+	public List<T> getLessThan(Node<T> node){
+		List<T> list = new ArrayList<>();
+		return getLessThan(node, list);
+	}
+	private List<T> getLessThan(Node<T> node, List<T> list){
+		list.addAll(node.getValue());
+		list.addAll(inOrderLeft(node.getLeft(), list));
+		if (node.getParent().getRight().equals(node))
+			list.addAll(getLessThan(node.getParent(), list));
+		return list;
+	}
+	public List<T> inOrderRight(Node<T> node){
+		List<T> list = new ArrayList<>();
+		return inOrderRight(node, list);
+	}
+	private List<T> inOrderRight(Node<T> node, List<T> list){
+		if (node == null)
+			return null;
+		else {
+			inOrderRight(node.getLeft(), list);
+			list.addAll(node.getValue());
+			inOrderRight(node.getRight(), list);
+			return list;
+		}
+	}
+	public List<T> inOrderLeft(Node<T> node){
+		List<T> list = new ArrayList<>();
+		return inOrderLeft(node, list);
+	}
+	private List<T> inOrderLeft(Node<T> node, List<T> list){
+		if (node == null)
+			return null;
+		else {
+			inOrderLeft(node.getRight(), list);
+			list.addAll(node.getValue());
+			inOrderLeft(node.getLeft(), list);
+			return list;
+		}
 	}
 	public int getHeight() {
 		return getHeight(root);

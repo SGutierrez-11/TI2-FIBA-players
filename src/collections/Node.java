@@ -1,23 +1,23 @@
 package collections;
 import java.util.ArrayList;
 public class Node<T>{
-	private ArrayList<T> nodes;
+	private ArrayList<T> values;
 	private Node<T> left; 
 	private Node<T> right;
 	private Node<T> parent;
 	public Node(T x) {
-		nodes = new ArrayList<>();
-		nodes.add(x);
+		values = new ArrayList<>();
+		values.add(x);
 	}
-	public T getValue() {
-		if (nodes.size() == 1)
-			return nodes.get(0);
-		else
-			return null;
+	public ArrayList<T> getValue() {
+		return values;
+	}
+	public void add(T t) {
+		values.add(t);
 	}
 	public void setValue(T v) {
-		if (nodes.size() == 1)
-			nodes.set(0, v);
+		if (values.size() == 1)
+			values.set(0, v);
 	}
 	public Node<T> getLeft() {
 		return left;
