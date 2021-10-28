@@ -1,5 +1,11 @@
 package collections;
-public class AVL<T extends Comparable<T>> extends BST<T> {
+
+import java.util.Comparator;
+
+public class AVL<T> extends BST<T> {
+	public AVL(Comparator<T> c) {
+		super(c);
+	}
 	@Override
 	public Node<T> add(T item) {
 		Node<T> added = super.add(item);

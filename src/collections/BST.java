@@ -1,8 +1,13 @@
 package collections;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-public class BST<T extends Comparable<T>> {
+public class BST<T> {
 	Node<T> root;
+	private Comparator<T> comparator;
+	public BST(Comparator<T> c) {
+		comparator = c;
+	}
 	public Node<T> add(T item) {
 		if (root == null) {
 			root = new Node<T>(item);
@@ -15,14 +20,14 @@ public class BST<T extends Comparable<T>> {
 		if (current == null) {
 			current = new Node<T>(item);
 			current.setParent(parent);
-			if (item.compareTo(parent.getValue().get(0)) < 0)
+			if (comparator.compare(item, parent.getValue().get(0)) < 0)
 				parent.setLeft(current);
 			else
 				parent.setRight(current);
 			return current;
-		}else if (item.compareTo(current.getValue().get(0)) < 0)
+		}else if (comparator.compare(item, parent.getValue().get(0)) < 0)
 			return add(item, current.getLeft(), current);
-		else if (item.compareTo(current.getValue().get(0)) > 0)
+		else if (comparator.compare(item, parent.getValue().get(0)) > 0)
 			return add(item, current.getRight(), current);
 		else {
 			current.add(item);
@@ -75,9 +80,9 @@ public class BST<T extends Comparable<T>> {
 	private Node<T> search(T item, Node<T> parent) {
 		if (parent == null)
 			return null;
-		else if (item.compareTo(parent.getValue().get(0))==0)
+		else if (comparator.compare(item, parent.getValue().get(0))==0)
 			return parent;
-		else if (item.compareTo(parent.getValue().get(0)) < 0)
+		else if (comparator.compare(item, parent.getValue().get(0)) < 0)
 			return search(item, parent.getLeft());
 		else
 			return search(item, parent.getRight());
