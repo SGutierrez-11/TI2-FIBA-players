@@ -17,7 +17,7 @@
                   <Image url="@../ui.pictures/output-onlinepngtools-2.png" />
                </image>
             </ImageView>
-            <Button layoutX="120.0" layoutY="87.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="112.0" text="Search" textAlignment="CENTER">
+            <Button layoutX="120.0" layoutY="87.0" mnemonicParsing="false" onAction="#openSearchPane" prefHeight="40.0" prefWidth="112.0" text="Search" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Image url="@../ui.pictures/clasify.png" />
                </image>
             </ImageView>
-            <Button layoutX="120.0" layoutY="166.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="112.0" text="Classify" textAlignment="CENTER">
+            <Button layoutX="120.0" layoutY="166.0" mnemonicParsing="false" onAction="#openClasifyPane" prefHeight="40.0" prefWidth="112.0" text="Classify" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Image url="@../ui.pictures/return.png" />
                </image>
             </ImageView>
-            <Button layoutX="120.0" layoutY="245.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="112.0" text="Return" textAlignment="CENTER">
+            <Button layoutX="120.0" layoutY="245.0" mnemonicParsing="false" onAction="#returnToMainPane" prefHeight="40.0" prefWidth="112.0" text="Return" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>

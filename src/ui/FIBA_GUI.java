@@ -11,8 +11,10 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import model.FIBA;
@@ -51,7 +53,35 @@ public class FIBA_GUI {
     @FXML
     private TableColumn<Player, Double> blocksColumn;
 
-	
+	//**************** Others *********************
+    @FXML
+    private BorderPane othersMainPane;
+    
+    //**************** Search **********************
+    @FXML
+    private TextField nameSearchTextField;
+
+    @FXML
+    private TextField ageSearchTextField;
+
+    @FXML
+    private Label pointsSearchLabel;
+
+    @FXML
+    private Label bouncesSearchLabel;
+
+    @FXML
+    private Label assistencesSearchLabel;
+
+    @FXML
+    private Label stealsSearchLabel;
+
+    @FXML
+    private Label bloscksSearchLabel;
+
+    @FXML
+    private Label teamSearchLabel;
+    
 	private FIBA fiba;
 	
 	
@@ -96,7 +126,9 @@ public class FIBA_GUI {
     public void openDeletePane(ActionEvent event) {
 
     }
-
+    
+    
+    //This Open others instead of Modify
     @FXML
     public void openModify(ActionEvent event) {
 
@@ -115,6 +147,20 @@ public class FIBA_GUI {
     	pointsColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("pointsPerGame"));
     	assistencesColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("assistencesPerGame"));
     	stealsColumn.setCellValueFactory(new PropertyValueFactory<Player, Double>("stealsPerGame"));
+    }
+    @FXML
+    void openClasifyPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void openSearchPane(ActionEvent event) {
+
+    }
+
+    @FXML
+    void returnToMainPane(ActionEvent event) {
+
     }
 	
 }
