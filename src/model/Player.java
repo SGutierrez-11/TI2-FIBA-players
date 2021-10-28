@@ -96,11 +96,10 @@ public class Player{
 
 	public void setBlocksPerGame(double blocksPerGame) {
 		this.blocksPerGame = blocksPerGame;
-	}
-	
-	
+	}	
 	
 	}
+/*
 	class ComparePlayer{
 		
 		//Identificar guide:
@@ -143,7 +142,12 @@ public class Player{
 			
 			case 1: 
 				toReturn = Double.compare(o1.getPointsPerGame(), o2.getPointsPerGame());
-				
+				switch(identificator2) {
+					
+					
+					
+					
+				}
 				break;
 			case 2:
 				toReturn = Double.compare(o1.getBouncesPerGame(), o2.getBouncesPerGame());
@@ -162,3 +166,4 @@ public class Player{
 		}
 		
 	}
+	*/
