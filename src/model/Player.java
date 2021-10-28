@@ -99,7 +99,7 @@ public class Player{
 	}	
 	
 	}
-/*
+
 	class ComparePlayer{
 		
 		//Identificar guide:
@@ -134,6 +134,7 @@ public class Player{
 			
 			return toReturn;
 		}
+		/*
 		public int compare(Player o1, Player o2, int identificator, int identificator2) {
 			
 			int toReturn = 0;
@@ -164,6 +165,6 @@ public class Player{
 			
 			return toReturn;
 		}
-		
+		*/
 	}
-	*/
+	

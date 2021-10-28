@@ -53,6 +53,8 @@ public class FIBA_GUI {
     @FXML
     private TableColumn<Player, Double> blocksColumn;
 
+    /*
+    
 	//**************** Others *********************
     @FXML
     private BorderPane othersMainPane;
@@ -81,7 +83,7 @@ public class FIBA_GUI {
 
     @FXML
     private Label teamSearchLabel;
-    
+    */
 	private FIBA fiba;
 	
 	
@@ -120,19 +122,9 @@ public class FIBA_GUI {
     }
   }		
 		
-		
-
-    @FXML
-    public void openDeletePane(ActionEvent event) {
-
-    }
     
     
     //This Open others instead of Modify
-    @FXML
-    public void openModify(ActionEvent event) {
-
-    }
     public void initializeAllPlayersTableview() {
     	
     	ObservableList<Player> observableList;
@@ -150,16 +142,6 @@ public class FIBA_GUI {
     }
     @FXML
     void openClasifyPane(ActionEvent event) {
-
-    }
-
-    @FXML
-    void openSearchPane(ActionEvent event) {
-
-    }
-
-    @FXML
-    void returnToMainPane(ActionEvent event) {
 
     }
 	

@@ -14,32 +14,12 @@
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="326.0" prefWidth="400.0" style="-fx-background-color: #001621#001621;" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane layoutX="200.0" layoutY="293.0" prefHeight="14.0" prefWidth="200.0" style="-fx-background-color: #ffffff#ffffff;" AnchorPane.bottomAnchor="293.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="293.0" />
-            <Button layoutX="261.0" layoutY="101.0" mnemonicParsing="false" onAction="#openModify" prefHeight="40.0" prefWidth="112.0" text="Others" textAlignment="CENTER">
+            <Button layoutX="261.0" layoutY="84.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="112.0" text="Import" textAlignment="CENTER">
                <font>
                   <Font name="Times New Roman Bold Italic" size="16.0" />
                </font>
             </Button>
-            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../ui.pictures/others.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="189.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../ui.pictures/deleteWhite.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="261.0" layoutY="191.0" mnemonicParsing="false" onAction="#openDeletePane" prefHeight="40.0" prefWidth="112.0" text="Delete" textAlignment="CENTER">
-               <font>
-                  <Font name="Times New Roman Bold Italic" size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="261.0" layoutY="35.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="112.0" text="Import" textAlignment="CENTER">
-               <font>
-                  <Font name="Times New Roman Bold Italic" size="16.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="191.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="43.0" fitWidth="45.0" layoutX="192.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../ui.pictures/importWhite.png" />
                </image>
@@ -50,6 +30,16 @@
                </image>
             </ImageView>
             <AnchorPane layoutX="151.0" layoutY="159.0" prefHeight="7.0" prefWidth="250.0" style="-fx-background-color: white;" />
+            <ImageView fitHeight="59.0" fitWidth="46.0" layoutX="190.0" layoutY="184.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ui.pictures/clasify.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="261.0" layoutY="184.0" mnemonicParsing="false" onAction="#openClasifyPane" prefHeight="40.0" prefWidth="112.0" text="Classify" textAlignment="CENTER">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="16.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </left>
