@@ -12,9 +12,11 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
 import model.FIBA;
@@ -84,6 +86,22 @@ public class FIBA_GUI {
     @FXML
     private Label teamSearchLabel;
     */
+    
+    //******* Leak Pane **************
+    @FXML
+    private BorderPane leakerPane;
+
+    @FXML
+    private TextField conditionTextField;
+
+    @FXML
+    private RadioButton moreThanRadioButton;
+
+    @FXML
+    private ToggleGroup condition;
+
+    @FXML
+    private RadioButton lessThanRadioButton;
 	private FIBA fiba;
 	
 	

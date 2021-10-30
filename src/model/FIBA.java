@@ -13,6 +13,14 @@ public class FIBA {
 	
 	private AVL<Player> pointsTree;
 	
+	private AVL<Player> bouncesTree;
+	
+	private AVL<Player> assistencesTree;
+	
+	private AVL<Player> blocksTree;
+	
+	private AVL<Player> stealsTree;
+	
 	
 	public FIBA() {
 		
