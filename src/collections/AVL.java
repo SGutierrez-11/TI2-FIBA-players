@@ -51,4 +51,9 @@ public class AVL<T> extends BST<T> {
 	private int balanceFactor(Node<T> current){
 		return getHeight(current.getRight())-getHeight(current.getLeft());
 	}
+	
+
+	
+	
+	
 }

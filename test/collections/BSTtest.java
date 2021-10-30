@@ -4,24 +4,27 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.util.Comparator;
+
 import org.junit.jupiter.api.Test;
 
-public class BSTtest<T extends Comparable<T>> {
+public class BSTtest<T> {
 	 private Node<Integer> node;
 	 private BST<Integer> tree;
+	 private Comparator<Integer> c;
 
 	 public void setupStage1() { 
 	 }
 	 
 	 public void setupStage2() {
-		 tree = new BST<>();
+		 tree = new BST<>(c);
 	 }
 	 
 	 @Test
 	 public void insertTest1() {
 		 setupStage1();
 		 
-		 BST<Integer> bst = new BST<>();
+		 BST<Integer> bst = new BST<Integer>(null);
 
 		 assertNull(bst.root);
 	 }
@@ -63,7 +66,7 @@ public class BSTtest<T extends Comparable<T>> {
 	 public void searchTest1() {
 		 setupStage1();
 		 
-		 BST<Integer> bst = new BST<>();
+		 BST<Integer> bst = new BST<>(c);
 		 
 		 assertNull(bst.search(3));
 	 }
