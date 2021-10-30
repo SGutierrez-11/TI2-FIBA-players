@@ -25,9 +25,9 @@ public class BST<T> {
 			else
 				parent.setRight(current);
 			return current;
-		}else if (comparator.compare(item, parent.getValue().get(0)) < 0)
+		}else if (comparator.compare(item, current.getValue().get(0)) < 0)
 			return add(item, current.getLeft(), current);
-		else if (comparator.compare(item, parent.getValue().get(0)) > 0)
+		else if (comparator.compare(item, current.getValue().get(0)) > 0)
 			return add(item, current.getRight(), current);
 		else {
 			current.add(item);
