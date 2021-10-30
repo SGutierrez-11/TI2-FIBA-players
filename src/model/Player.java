@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Comparator;
-
 public class Player{
 
 	String name;
@@ -110,7 +108,7 @@ public class Player{
 		//5 = blocks per game
 		
 		
-		public int compare(Player o1, Player o2, int identificator) {
+		public static int compare(Player o1, Player o2, int identificator) {
 		
 			int toReturn = 0;
 			

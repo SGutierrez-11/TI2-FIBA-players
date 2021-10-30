@@ -5,13 +5,19 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import collections.AVL;
+
 public class FIBA {
 
 	ArrayList<Player> allPlayers;
 	
+	private AVL<Player> pointsTree;
+	
+	
 	public FIBA() {
 		
 		allPlayers = new ArrayList<Player>();
+		pointsTree = new AVL();
 	}
 	
 	
