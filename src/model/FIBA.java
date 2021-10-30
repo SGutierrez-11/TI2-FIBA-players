@@ -38,6 +38,10 @@ public class FIBA {
 		
 		//Player tmp = new Player("name",00,"Team",00,00,00,00,00);
 		comparePoints = Comparator.comparing((Player player)->player.getPointsPerGame());
+		if(comparePoints==null) {
+			System.out.println("Esto da nulo");
+		}
+		
 		compareBounces = Comparator.comparing((Player player)->player.getBouncesPerGame());
 		compareSteals = Comparator.comparing((Player player)->player.getStealsPerGame());
 		compareBlocks = Comparator.comparing((Player player)->player.getBlocksPerGame());
