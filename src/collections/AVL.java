@@ -49,7 +49,10 @@ public class AVL<T> extends BST<T> {
 		q.setRight(p);
 	}
 	private int balanceFactor(Node<T> current){
-		return getHeight(current.getRight())-getHeight(current.getLeft());
+		if (current == null)
+			return 0;
+		else
+			return getHeight(current.getRight())-getHeight(current.getLeft());
 	}
 	
 
