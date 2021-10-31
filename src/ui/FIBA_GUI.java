@@ -20,6 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -112,7 +113,7 @@ public class FIBA_GUI {
     
     // *************** LeakTable Pane ************
     @FXML
-    private BorderPane leakMainPane;
+    private Pane leakPane;
 
     @FXML
     private TableView<Player> leakTableView;
@@ -366,7 +367,7 @@ double condition = Double.parseDouble(conditionTextField.getText());
     @FXML
     public void leakBySteals(MouseEvent event) throws IOException {
     	
-double condition = Double.parseDouble(conditionTextField.getText());
+    	double condition = Double.parseDouble(conditionTextField.getText());
     	
     	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
     	
@@ -376,7 +377,7 @@ double condition = Double.parseDouble(conditionTextField.getText());
 		Scene scene = new Scene(root);
     	Stage stage = new Stage();
     	stage.initModality(Modality.WINDOW_MODAL);
-    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.initOwner(leakerPane.getScene().getWindow());
     	stage.setScene(scene);
     	stage.show();
     	if(lessThanRadioButton.isSelected()==true) {
@@ -440,11 +441,11 @@ double condition = Double.parseDouble(conditionTextField.getText());
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainPaneV2.fxml"));
 		fxmlLoader.setController(this);
     	Parent menuPane = fxmlLoader.load();
+    	leakerPane.getChildren().setAll(menuPane); 
+    	initializeAllPlayersTableview();
     	mainPane.setPrefHeight(324);
     	mainPane.setPrefWidth(1200);
-    	mainPane.getChildren().setAll(menuPane); 
-    	
-    	
+
     	
     }
     
