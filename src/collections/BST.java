@@ -88,15 +88,13 @@ public class BST<T> implements BSTInterface<T>{
 		else
 			return search(t, parent.getRight());
 	}
-	public List<T> getGreaterThan(Node<T> node){
-		T t = node.getValue().get(0);
+	public List<T> getGreaterThan(T t){
 		List<T> list = inOrderRight(root);
 		int i = Collections.binarySearch(list, t, comparator);
 		list = list.subList(i, list.size());
 		return list;
 	}
-	public List<T> getLessThan(Node<T> node){
-		T t = node.getValue().get(0);
+	public List<T> getLessThan(T t){
 		List<T> list = inOrderRight(root);
 		int i = Collections.binarySearch(list, t, comparator);
 		return list.subList(0, i);

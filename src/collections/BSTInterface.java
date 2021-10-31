@@ -14,11 +14,11 @@ public interface BSTInterface<T> {
 	
 	//Node<T> search(T item, Node<T> parent);
 	
-	List<T> getGreaterThan(Node<T> node);
+	List<T> getGreaterThan(T item);
 	
 	//List<T> getGreaterThan(Node<T> node, List<T> list);
 	
-	List<T> getLessThan(Node<T> node);
+	List<T> getLessThan(T item);
 	
 	List<T> inOrderRight(Node<T> node);
 	
