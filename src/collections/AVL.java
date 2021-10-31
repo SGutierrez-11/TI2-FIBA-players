@@ -16,7 +16,7 @@ public class AVL<T> extends BST<T>{
 		boolean value = super.delete(item);
 		return value;
 	}*/
-	private void rebalance(Node<T> current) {
+	public void rebalance(Node<T> current) {
 		if (current != null && current.getParent() != null) {
 			boolean balanced = false;
 			while(current.getParent() != null && !balanced){
@@ -36,7 +36,7 @@ public class AVL<T> extends BST<T>{
 			}
 		}
 	}
-	private void leftRotate(Node<T> p) {
+	public void leftRotate(Node<T> p) {
 		Node<T> parent = p.getParent();
 		Node<T> q = p.getRight();
 		Node<T> r = q.getLeft();
@@ -53,7 +53,7 @@ public class AVL<T> extends BST<T>{
 		p.setParent(q);
 		q.setLeft(p);
 	}
-	private void rightRotate(Node<T> p) {
+	public void rightRotate(Node<T> p) {
 		Node<T> parent = p.getParent();
 		Node<T> q = p.getLeft();
 		Node<T> r = q.getRight();
@@ -70,7 +70,7 @@ public class AVL<T> extends BST<T>{
 		p.setParent(q);
 		q.setRight(p);
 	}
-	private int balanceFactor(Node<T> current){
+	public int balanceFactor(Node<T> current){
 		if (current == null)
 			return 0;
 		else
