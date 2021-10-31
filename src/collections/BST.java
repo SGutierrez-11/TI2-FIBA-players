@@ -91,13 +91,32 @@ public class BST<T> implements BSTInterface<T>{
 	public List<T> getGreaterThan(T t){
 		List<T> list = inOrderRight(root);
 		int i = Collections.binarySearch(list, t, comparator);
-		list = list.subList(i, list.size());
-		return list;
+		if (i >= 0)
+			return list.subList(i, list.size());
+		else {
+			if (comparator.compare(t, list.get(list.size()-1)) > 0)
+				return new ArrayList<>();
+			else if (comparator.compare(t, list.get(0)) < 0)
+				return list;
+			else {
+				return list.subList(~i, list.size());
+			}
+		}
 	}
 	public List<T> getLessThan(T t){
 		List<T> list = inOrderRight(root);
 		int i = Collections.binarySearch(list, t, comparator);
-		return list.subList(0, i);
+		if (i >= 0)
+			return list.subList(0, i);
+		else {
+			if (comparator.compare(t, list.get(list.size()-1)) > 0)
+				return list;
+			else if (comparator.compare(t, list.get(0)) < 0)
+				return new ArrayList<>();
+			else {
+				return list.subList(0, ~i);
+			}
+		}
 	}
 	public List<T> inOrderRight(Node<T> node){
 		List<T> list = new ArrayList<>();
