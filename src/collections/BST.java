@@ -142,6 +142,7 @@ public class BST<T> {
 	public int getHeight() {
 		return getHeight(root);
 	}
+	
 	protected int getHeight(Node<T> current) {
 		if (current == null)
 			return 0;
