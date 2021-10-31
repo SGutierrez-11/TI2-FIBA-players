@@ -330,15 +330,15 @@ public class FIBA_GUI {
     }
     public void initializeLeakTableview(int tree, double condition, int choose) {
     	
+    	System.out.println(choose);
     	
-
     	ObservableList<Player> observableList;
-    	if(choose==1) {
-    		
+    	
+    	if(choose==1) {	
     	observableList = FXCollections.observableArrayList(fiba.searchLess(tree, condition));
     	}else {
     	observableList = FXCollections.observableArrayList(fiba.searchMore(tree, condition));
-    	
+    	System.out.println("Es Nulo aqui");
     	}
     	
     	leakTableView.setItems(observableList);

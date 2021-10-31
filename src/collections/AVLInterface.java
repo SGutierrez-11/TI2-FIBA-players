@@ -1,5 +1,7 @@
 package collections;
 
-public interface AVLInterface {
-
+public interface AVLInterface<T> {
+	
+	
+	Node<T> add(T item);
 }

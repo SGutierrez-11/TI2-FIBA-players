@@ -1,6 +1,6 @@
 package collections;
 import java.util.Comparator;
-public class AVL<T> extends BST<T> {
+public class AVL<T> extends BST<T> implements AVLInterface{
 	public AVL(Comparator<T> c) {
 		super(c);
 	}
@@ -75,5 +75,15 @@ public class AVL<T> extends BST<T> {
 			return 0;
 		else
 			return getHeight(current.getRight())-getHeight(current.getLeft());
+	}
+	@Override
+	public Node add(Object item) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Node add(Object item) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
