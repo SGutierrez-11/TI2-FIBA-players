@@ -54,22 +54,104 @@ public class AVLtest {
 	}
 	
 	@Test
-	public void rebalance1() {
+	public void rebalanceTest1() {
 		
+		setupStage2();
 		
+		avl.add(10);
+		avl.add(8);
+		avl.add(12);
+		avl.add(4);
+		avl.add(15);
+		avl.add(6);
+		
+		avl.rebalance(avl.root);
+		
+		assertEquals(avl.balanceFactor(avl.root), 0);
 		
 	}
 	
 	@Test
-	public void rebalance2() {
+	public void rebalanceTest2() {
+		setupStage2();
 		
+		avl.add(10);
+		avl.add(8);
+		avl.add(12);
+		avl.add(4);
+		avl.add(15);
+		avl.add(6);
+		avl.add(11);
+		avl.add(18);
+		avl.add(20);
+		avl.add(9);
+		avl.add(7);
+		avl.add(1);
+		
+		avl.rebalance(avl.root.getLeft());
+		
+		assertEquals(avl.balanceFactor(avl.root), 0);
+		assertEquals(avl.root.getLeft().getRight().getValue().get(0),(Integer) 8);
 	}
 	
 	@Test
-	public void rebalance3() {
+	public void leftRotateTest1() {
+		setupStage2();
 		
+		avl.add(10);
+		avl.add(8);
+		avl.add(12);
+		avl.add(4);
+		avl.add(15);
+		avl.add(6);
+		
+		assertEquals(avl.root.getLeft().getLeft().getValue().get(0), (Integer) 4);
+		
+		avl.leftRotate(avl.root.getLeft());
+		
+		assertEquals(avl.root.getLeft().getLeft().getValue().get(0), (Integer) 6);
+		
+	
+	}
+	
+	@Test
+	public void RightRotateTest1() {
+		setupStage2();
+		
+		avl.add(10);
+		avl.add(8);
+		avl.add(12);
+		avl.add(4);
+		avl.add(15);
+		avl.add(6);
+		
+		assertEquals(avl.root.getLeft().getLeft().getValue().get(0), (Integer) 4);
+		
+		avl.rightRotate(avl.root.getLeft());
+		
+		assertEquals(avl.root.getLeft().getRight().getValue().get(0), (Integer) 6);
+		
+	
 	}
 	
 	
+	@Test
+	public void balanceFactorTest() {
+		setupStage2();
+		
+		avl.add(10);
+		avl.add(8);
+		avl.add(12);
+		avl.add(4);
+		avl.add(15);
+		avl.add(6);
+		avl.add(17);
+		avl.add(1);
+		avl.add(3);
+		avl.add(14);
+		avl.add(9);
+		
+		assertEquals(avl.balanceFactor(avl.root.getLeft().getLeft()), 0);
+	}
 	
 }
