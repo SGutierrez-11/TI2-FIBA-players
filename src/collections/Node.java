@@ -6,6 +6,8 @@ public class Node<T>{
 	private Node<T> right;
 	private Node<T> parent;
 	public Node(T x) {
+		this.left = null;
+		this.right = null;
 		values = new ArrayList<>();
 		values.add(x);
 	}
