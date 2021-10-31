@@ -1,6 +1,6 @@
 package collections;
 import java.util.ArrayList;
-public class Node<T>{
+public class Node<T> implements NodeInterface<T>{
 	private ArrayList<T> values;
 	private Node<T> left; 
 	private Node<T> right;
