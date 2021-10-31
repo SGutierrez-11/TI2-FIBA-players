@@ -115,51 +115,89 @@ public class BSTtest<T> {
 		 list.add(14);
 		 list.add(16);
 		 list.add(20);
-		 assertEquals(tree.getGreaterThan(10), list.get(0));
-	 }
-	 
-	 @Test
-	 public void getGreaterThanTest2() {
-		 
+		 assertEquals(tree.getGreaterThan(10).get(0), list.get(0));
+		 assertEquals(tree.getGreaterThan(10).get(1), list.get(1));
+		 assertEquals(tree.getGreaterThan(10).get(2), list.get(2));
+		 assertEquals(tree.getGreaterThan(10).get(3), list.get(3));
 	 }
 	 
 	 @Test
 	 public void getLessThanTest1() {
+		 setupStage2();
 		 
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
+		 tree.add(16);
+		 tree.add(2);
+		 tree.add(6);
+		 
+		 List<Integer> list = new ArrayList<>();
+		 list.add(10);
+		 list.add(9);
+		 list.add(2);
+		 list.add(6);
+		 
+		 assertEquals(tree.getLessThan(10).get(0), list.get(2));
+		 assertEquals(tree.getLessThan(10).get(1), list.get(3));
+		 assertEquals(tree.getLessThan(10).get(2), list.get(1));
 	 }
 	 
-	 @Test
-	 public void getLessThanTest2() {
-		 
-	 }
 	 
 	 @Test
 	 public void inOrderRightTest1() {
+		 setupStage2();
 		 
-	 }
-	 
-	 @Test
-	 public void inOrderRightTest2() {
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
+		 tree.add(16);
+		 tree.add(2);
+		 tree.add(6);
+		 
+		 List<Integer> list = new ArrayList<>();
+		 list.add(10);
+		 list.add(9);
+		 list.add(2);
+		 list.add(6);
+		 
+		 assertEquals(tree.inOrderRight(tree.root).get(0), list.get(2));
+		 assertEquals(tree.inOrderRight(tree.root).get(1), list.get(3));
 		 
 	 }
 	 
 	 @Test
 	 public void inOrderLeftTest1() {
+		 setupStage2();
 		 
-	 }
-	 
-	 @Test
-	 public void inOrderLeftTest2() {
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
+		 tree.add(16);
+		 tree.add(2);
+		 tree.add(6);
 		 
+		 List<Integer> list = new ArrayList<>();
+		 list.add(10);
+		 list.add(14);
+		 list.add(16);
+		 list.add(6);
+		 
+		 assertEquals(tree.inOrderLeft(tree.root).get(0), list.get(2));
+		 assertEquals(tree.inOrderLeft(tree.root).get(1), list.get(1));
 	 }
 	 
 	 @Test
 	 public void getHeightTest1() {
+		 setupStage2();
+		 tree.add(10);
+		 tree.add(9);
+		 tree.add(14);
+		 tree.add(16);
+		 tree.add(2);
+		 tree.add(6);
 		 
-	 }
-	 
-	 @Test
-	 public void getHeightTest2() {
+		 assertEquals(tree.getHeight(), 4);
 		 
 	 }
 	 
