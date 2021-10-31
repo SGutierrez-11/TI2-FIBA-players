@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 import collections.AVL;
 
-public class FIBA {
+public class FIBA<T> {
 
 	ArrayList<Player> allPlayers;
 	
@@ -16,6 +16,10 @@ public class FIBA {
 	
 	private AVL<Player> pointsTree;
 	
+
+	private Comparator<Player> c;
+	
+
 	private AVL<Player> bouncesTree;
 	
 	private AVL<Player> assistencesTree;
@@ -48,12 +52,16 @@ public class FIBA {
 		compareAssistences = Comparator.comparing((Player player)-> player.getAssistencesPerGame());
 		
 		allPlayers = new ArrayList<Player>();
+
+		pointsTree = new AVL<>(c);
+
 		changeTree = new ArrayList<Player>();
 		pointsTree = new AVL<Player>(comparePoints);
 		bouncesTree = new AVL<Player>(compareBounces);
 		blocksTree = new AVL<Player>(compareBlocks);
 		stealsTree = new AVL<Player>(compareSteals);
 		assistencesTree = new AVL<Player>(compareAssistences);
+
 	}
 	
 	
