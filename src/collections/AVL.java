@@ -7,8 +7,8 @@ public class AVL<T> extends BST<T> {
 	@Override
 	public Node<T> add(T item) {
 		Node<T> added = super.add(item);
-		if (added != null && added.getParent()!=null)
-			rebalance(added);
+		if ((added.getLeft() == null && added.getRight() == null) && added.getValue().size() == 1)
+			rebalance(added.getParent());
 		return added;
 	}
 	/*@Override
@@ -17,43 +17,63 @@ public class AVL<T> extends BST<T> {
 		return value;
 	}*/
 	private void rebalance(Node<T> current) {
-		boolean balanced = false;
-		while(!current.equals(root) && !balanced){
-			current = current.getParent();
-			int bf = balanceFactor(current);
-			if (bf == 2) {
-				if (balanceFactor(current.getRight()) == -1)
-					rightRotate(current.getRight());
-				leftRotate(current);
-				balanced = true;
-			}else if (bf < -1) {
-				if (balanceFactor(current.getLeft()) == 1)
-					leftRotate(current.getLeft());
-				rightRotate(current);
-				balanced = true;
+		if (current != null && current.getParent() != null) {
+			boolean balanced = false;
+			while(current.getParent() != null && !balanced){
+				current = current.getParent();
+				int bf = balanceFactor(current);
+				if (bf == 2) {
+					if (balanceFactor(current.getRight()) == -1)
+						rightRotate(current.getRight());
+					leftRotate(current);
+					balanced = true;
+				}else if (bf == -2) {
+					if (balanceFactor(current.getLeft()) == 1)
+						leftRotate(current.getLeft());
+					rightRotate(current);
+					balanced = true;
+				}
 			}
 		}
 	}
 	private void leftRotate(Node<T> p) {
+		Node<T> parent = p.getParent();
 		Node<T> q = p.getRight();
-		q.setParent(p.getParent());
-		p.setRight(q.getLeft());
+		Node<T> r = q.getLeft();
+		q.setParent(parent);
+		if (parent != null) {
+			if (parent.getLeft() != null && parent.getLeft().equals(p))
+				parent.setLeft(q);
+			else
+				parent.setRight(q);
+		}
+		p.setRight(r);
+		if (r != null)
+			r.setParent(p);
 		p.setParent(q);
 		q.setLeft(p);
 	}
 	private void rightRotate(Node<T> p) {
+		Node<T> parent = p.getParent();
 		Node<T> q = p.getLeft();
-		q.setParent(p.getParent());
-		p.setLeft(q.getRight());
+		Node<T> r = q.getRight();
+		q.setParent(parent);
+		if  (parent != null) {
+			if (parent.getLeft() != null && parent.getLeft().equals(p))
+				parent.setLeft(q);
+			else
+				parent.setRight(q);
+		}
+		p.setLeft(r);
+		if (r != null)
+			r.setParent(p);
 		p.setParent(q);
 		q.setRight(p);
 	}
 	private int balanceFactor(Node<T> current){
-		return getHeight(current.getRight())-getHeight(current.getLeft());
+		if (current == null)
+			return 0;
+		else
+			return getHeight(current.getRight())-getHeight(current.getLeft());
 	}
-	
-
-	
-	
-	
 }

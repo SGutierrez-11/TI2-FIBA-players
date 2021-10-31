@@ -24,7 +24,7 @@ public class BSTtest<T> {
 	 public void insertTest1() {
 		 setupStage1();
 		 
-		 BST<Integer> bst = new BST<Integer>(null);
+		 BST<Integer> bst = new BST<Integer>(c);
 
 		 assertNull(bst.root);
 	 }
