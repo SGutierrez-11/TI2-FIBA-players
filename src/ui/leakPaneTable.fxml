@@ -2,22 +2,22 @@
 
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
 
 
-<BorderPane fx:id="leakMainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <TableView fx:id="leakTableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <columns>
-          <TableColumn fx:id="nameLeakColumn" prefWidth="75.0" text="Name" />
-          <TableColumn fx:id="ageLeakColumn" prefWidth="75.0" text="Age" />
+<Pane fx:id="leakPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="leakTableView" layoutX="-1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
+         <columns>
+            <TableColumn fx:id="nameLeakColumn" prefWidth="72.0" text="Name" />
+            <TableColumn fx:id="ageLeakColumn" prefWidth="78.0" text="Age" />
             <TableColumn fx:id="teamLeakColumn" prefWidth="75.0" text="Team" />
             <TableColumn fx:id="pointsLeakColumn" prefWidth="75.0" text="Points Per Game" />
             <TableColumn fx:id="bouncesLeakColumn" prefWidth="75.0" text="Bounces Per Game" />
             <TableColumn fx:id="assistencesLeakColumn" prefWidth="75.0" text="Assistences Per Game" />
             <TableColumn fx:id="blocksLeaksColumn" prefWidth="75.0" text="Blocks Per Game" />
             <TableColumn fx:id="stealsLeakColumn" prefWidth="75.0" text="Steals Per Game" />
-        </columns>
+         </columns>
       </TableView>
-   </center>
-</BorderPane>
+   </children>
+</Pane>
