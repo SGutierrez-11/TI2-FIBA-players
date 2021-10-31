@@ -353,6 +353,19 @@ public class FIBA_GUI {
     	stealsLeakColumn.setCellValueFactory(new PropertyValueFactory<Player, Double>("stealsPerGame"));
     	
     }
-
+    @FXML
+    public void returnToMainPane(ActionEvent event) throws IOException {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainPaneV2.fxml"));
+		fxmlLoader.setController(this);
+    	Parent menuPane = fxmlLoader.load();
+    	mainPane.setPrefHeight(324);
+    	mainPane.setPrefWidth(1200);
+    	mainPane.getChildren().setAll(menuPane); 
+    	
+    	
+    	
+    }
+    
 }
 
