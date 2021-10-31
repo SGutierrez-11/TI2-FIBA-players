@@ -200,6 +200,8 @@ public class FIBA_GUI {
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakerPane.fxml"));
 		fxmlLoader.setController(this);
     	Parent menuPane = fxmlLoader.load();
+    	mainPane.setPrefHeight(400);
+    	mainPane.setPrefWidth(600);
     	mainPane.getChildren().setAll(menuPane); 
     	
     	
