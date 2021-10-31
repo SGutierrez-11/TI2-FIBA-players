@@ -1,5 +1,6 @@
 package collections;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 public class BST<T> implements BSTInterface<T>{
@@ -88,29 +89,16 @@ public class BST<T> implements BSTInterface<T>{
 		else
 			return search(t, parent.getRight());
 	}
-	public List<T> getGreaterThan(Node<T> node){
-		List<T> list = new ArrayList<>();
-		return getGreaterThan(node, list);
-	}
-	private List<T> getGreaterThan(Node<T> node, List<T> list){
-		list.addAll(node.getValue());
-		inOrderRight(node.getRight(), list);
-		Node<T> parent = node.getParent();
-		if ((parent != null && parent.getLeft() != null)&& parent.getLeft().equals(node))
-			getGreaterThan(parent, list);
+	public List<T> getGreaterThan(T t){
+		List<T> list = inOrderRight(root);
+		int i = Collections.binarySearch(list, t, comparator);
+		list = list.subList(i, list.size());
 		return list;
 	}
-	public List<T> getLessThan(Node<T> node){
-		List<T> list = new ArrayList<>();
-		return getLessThan(node, list);
-	}
-	private List<T> getLessThan(Node<T> node, List<T> list){
-		list.addAll(node.getValue());
-		inOrderLeft(node.getLeft(), list);
-		Node<T> parent = node.getParent();
-		if ((parent != null && parent.getRight() != null) && parent.getRight().equals(node))
-			getLessThan(parent, list);
-		return list;
+	public List<T> getLessThan(T t){
+		List<T> list = inOrderRight(root);
+		int i = Collections.binarySearch(list, t, comparator);
+		return list.subList(0, i);
 	}
 	public List<T> inOrderRight(Node<T> node){
 		List<T> list = new ArrayList<>();

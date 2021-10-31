@@ -115,7 +115,7 @@ public class BSTtest<T> {
 		 list.add(14);
 		 list.add(16);
 		 list.add(20);
-		 assertEquals(tree.getGreaterThan(tree.root).get(0), list.get(1));
+		 assertEquals(tree.getGreaterThan(10), list.get(0));
 	 }
 	 
 	 @Test

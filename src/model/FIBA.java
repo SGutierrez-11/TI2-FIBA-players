@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 import collections.AVL;
 
@@ -12,7 +13,7 @@ public class FIBA<T> {
 
 	ArrayList<Player> allPlayers;
 	
-	ArrayList<Player> changeTree;
+	List<Player> changeTree;
 	
 	private AVL<Player> pointsTree;
 	
@@ -89,8 +90,12 @@ public class FIBA<T> {
 		br.close();
 		
 	}
+
 	
-	public ArrayList<Player> searchLess(int tree, double condition){
+
+
+	public List<Player> searchLess(int tree, double condition){
+
 		
 		Player tmp;
 		changeTree = null;
@@ -99,27 +104,27 @@ public class FIBA<T> {
 		
 		case 1: 
 		tmp = new Player("W",00,"Z", condition,0,0,0,0);
-		changeTree = (ArrayList<Player>) pointsTree.getLessThan(pointsTree.search(tmp));
+		changeTree = pointsTree.getLessThan(tmp);
 			
 		break;
 		case 2:
 		tmp = new Player("W",00,"Z",0,condition,0,0,0);
-		changeTree = (ArrayList<Player>) bouncesTree.getLessThan(bouncesTree.search(tmp));
+		changeTree = bouncesTree.getLessThan(tmp);
 		
 		break;
 		case 3:
 		tmp = new Player("W",00,"Z", 0,0,condition,0,0);	
-		changeTree = (ArrayList<Player>) assistencesTree.getLessThan(assistencesTree.search(tmp));
+		changeTree = assistencesTree.getLessThan(tmp);
 		
 		break;
 		case 4:
 		tmp = new Player("W",00,"Z", 0,0,0,condition,0);
-		changeTree = (ArrayList<Player>) blocksTree.getLessThan(blocksTree.search(tmp));
+		changeTree = blocksTree.getLessThan(tmp);
 		
 		break;
 		case 5:
 		tmp = new Player("W",00,"Z",0,0,0,0,condition);
-		changeTree = (ArrayList<Player>) stealsTree.getLessThan(stealsTree.search(tmp));
+		changeTree = stealsTree.getLessThan(tmp);
 		
 		break;
 		
@@ -130,7 +135,7 @@ public class FIBA<T> {
 		
 		return changeTree;
 	}
-	public ArrayList<Player> searchMore(int tree, double condition){
+	public List<Player> searchMore(int tree, double condition){
 		
 		changeTree = null;
 		
@@ -140,26 +145,26 @@ public class FIBA<T> {
 		
 		case 1: 
 		tmp = new Player("W",00,"Z", condition,0,0,0,0);
-		changeTree = (ArrayList<Player>) pointsTree.getGreaterThan(pointsTree.search(tmp));
+		changeTree = pointsTree.getGreaterThan(tmp);
 		break;
 		case 2:
 		tmp = new Player("W",00,"Z",0,condition,0,0,0);
-		changeTree = (ArrayList<Player>) bouncesTree.getGreaterThan(bouncesTree.search(tmp));
+		changeTree = bouncesTree.getGreaterThan(tmp);
 		
 		break;
 		case 3:
 		tmp = new Player("W",00,"Z", 0,0,condition,0,0);	
-		changeTree = (ArrayList<Player>) assistencesTree.getGreaterThan(assistencesTree.search(tmp));
+		changeTree = assistencesTree.getGreaterThan(tmp);
 		
 		break;
 		case 4:
 		tmp = new Player("W",00,"Z", 0,0,0,condition,0);
-		changeTree = (ArrayList<Player>) blocksTree.getGreaterThan(blocksTree.search(tmp));
+		changeTree = blocksTree.getGreaterThan(tmp);
 		
 		break;
 		case 5:
 		tmp = new Player("W",00,"Z",0,0,0,0,condition);
-		changeTree = (ArrayList<Player>) stealsTree.getGreaterThan(stealsTree.search(tmp));
+		changeTree = stealsTree.getGreaterThan(tmp);
 		
 		break;
 		
@@ -168,7 +173,7 @@ public class FIBA<T> {
 		
 		return changeTree;
 	}
-	public ArrayList<Player> searchEquals(int tree, double condition){
+	public List<Player> searchEquals(int tree, double condition){
 		
 		changeTree = null;
 		
