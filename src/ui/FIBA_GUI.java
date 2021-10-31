@@ -7,11 +7,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -19,6 +21,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import model.FIBA;
 import model.Player;
 
@@ -102,6 +106,38 @@ public class FIBA_GUI {
 
     @FXML
     private RadioButton lessThanRadioButton;
+    
+    // *************** LeakTable Pane ************
+    @FXML
+    private BorderPane leakMainPane;
+
+    @FXML
+    private TableView<Player> leakTableView;
+
+    @FXML
+    private TableColumn<Player, String> nameLeakColumn;
+
+    @FXML
+    private TableColumn<Player, Integer> ageLeakColumn;
+
+    @FXML
+    private TableColumn<Player, String> teamLeakColumn;
+
+    @FXML
+    private TableColumn<Player, Double> pointsLeakColumn;
+
+    @FXML
+    private TableColumn<Player, Double> bouncesLeakColumn;
+
+    @FXML
+    private TableColumn<Player, Double> assistencesLeakColumn;
+
+    @FXML
+    private TableColumn<Player, Double> blocksLeaksColumn;
+
+    @FXML
+    private TableColumn<Player, Double> stealsLeakColumn;
+    
 	private FIBA fiba;
 	
 	
@@ -159,8 +195,162 @@ public class FIBA_GUI {
     	stealsColumn.setCellValueFactory(new PropertyValueFactory<Player, Double>("stealsPerGame"));
     }
     @FXML
-    void openClasifyPane(ActionEvent event) {
+    void openClasifyPane(ActionEvent event) throws IOException {
 
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakerPane.fxml"));
+		fxmlLoader.setController(this);
+    	Parent menuPane = fxmlLoader.load();
+    	mainPane.getChildren().setAll(menuPane); 
+    	
+    	
     }
-	
+    @FXML
+    public void LeakByAssistences(MouseEvent event) throws IOException {
+
+    	double condition = Double.parseDouble(conditionTextField.getText());
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		initializeLeakTableview(3, condition, 1);
+    		
+    	}else {
+    		
+    		initializeLeakTableview(3, condition, 2);
+    		
+    	}
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
+    	
+    }
+
+    @FXML
+    public void LeakByBlocks(MouseEvent event) throws IOException {
+    	
+    	double condition = Double.parseDouble(conditionTextField.getText());
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		initializeLeakTableview(4, condition, 1);
+    		
+    	}else {
+    		
+    		initializeLeakTableview(4, condition, 2);
+    		
+    	}
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
+    	
+    }
+
+    @FXML
+    public void LeakByBounces(MouseEvent event) throws IOException {
+    	
+    	double condition = Double.parseDouble(conditionTextField.getText());
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		initializeLeakTableview(2, condition, 1);
+    		
+    	}else {
+    		
+    		initializeLeakTableview(2, condition, 2);
+    		
+    	}
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
+    }
+
+    @FXML
+    public void LeakByPoints(MouseEvent event) throws IOException {
+
+    	double condition = Double.parseDouble(conditionTextField.getText());
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		//fiba.searchLess(1, condition);
+    		initializeLeakTableview(1, condition, 1);
+    	}else {
+    		initializeLeakTableview(1, condition, 2);
+    		
+    		
+    	}
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
+    }
+
+    @FXML
+    public void leakBySteals(MouseEvent event) throws IOException {
+    	
+    	double condition = Double.parseDouble(conditionTextField.getText());
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		initializeLeakTableview(5, condition, 1);
+    		
+    	}else {
+    		
+    		initializeLeakTableview(5, condition, 2);
+    		
+    	}
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
+    	
+    }
+    public void initializeLeakTableview(int tree, double condition, int choose) {
+    	
+    	
+
+    	ObservableList<Player> observableList;
+    	if(choose==1) {
+    		
+    	observableList = FXCollections.observableArrayList(fiba.searchLess(tree, condition));
+    	}else {
+    	observableList = FXCollections.observableArrayList(fiba.searchMore(tree, condition));
+    	
+    	}
+    	
+    	leakTableView.setItems(observableList);
+    	 
+    	nameLeakColumn.setCellValueFactory(new PropertyValueFactory<Player,String>("name"));
+    	ageLeakColumn.setCellValueFactory(new PropertyValueFactory<Player, Integer>("Age"));
+    	teamLeakColumn.setCellValueFactory(new PropertyValueFactory<Player,String>("team"));
+    	bouncesLeakColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("bouncesPerGame"));
+    	blocksLeaksColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("blocksPerGame"));
+    	pointsLeakColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("pointsPerGame"));
+    	assistencesLeakColumn.setCellValueFactory(new PropertyValueFactory<Player,Double>("assistencesPerGame"));
+    	stealsLeakColumn.setCellValueFactory(new PropertyValueFactory<Player, Double>("stealsPerGame"));
+    	
+    }
+
 }
+
