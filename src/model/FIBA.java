@@ -102,12 +102,12 @@ public class FIBA<T> {
 		break;
 		case 2:
 		tmp = new Player("W",00,"Z",0,condition,0,0,0);
-		changeTree = (ArrayList<Player>) bouncesTree.getLessThan(pointsTree.search(tmp));
+		changeTree = (ArrayList<Player>) bouncesTree.getLessThan(bouncesTree.search(tmp));
 		
 		break;
 		case 3:
 		tmp = new Player("W",00,"Z", 0,0,condition,0,0);	
-		changeTree = (ArrayList<Player>) assistencesTree.getLessThan(pointsTree.search(tmp));
+		changeTree = (ArrayList<Player>) assistencesTree.getLessThan(assistencesTree.search(tmp));
 		
 		break;
 		case 4:
@@ -146,12 +146,12 @@ public class FIBA<T> {
 		break;
 		case 2:
 		tmp = new Player("W",00,"Z",0,condition,0,0,0);
-		changeTree = (ArrayList<Player>) bouncesTree.getGreaterThan(pointsTree.search(tmp));
+		changeTree = (ArrayList<Player>) bouncesTree.getGreaterThan(bouncesTree.search(tmp));
 		
 		break;
 		case 3:
 		tmp = new Player("W",00,"Z", 0,0,condition,0,0);	
-		changeTree = (ArrayList<Player>) assistencesTree.getGreaterThan(pointsTree.search(tmp));
+		changeTree = (ArrayList<Player>) assistencesTree.getGreaterThan(assistencesTree.search(tmp));
 		
 		break;
 		case 4:
