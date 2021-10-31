@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="leakerPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #001621#001621 #001621#001621;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #001621#001621 #001621#001621 #001621#001621 #001621#001621;" BorderPane.alignment="CENTER">
          <children>
             <TextField fx:id="conditionTextField" layoutX="237.0" layoutY="150.0" />
             <Label layoutX="145.0" layoutY="153.0" text="Condition" textFill="WHITE">
