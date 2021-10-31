@@ -2,7 +2,7 @@ package collections;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-public class BST<T> {
+public class BST<T> implements BSTInterface<T>{
 	Node<T> root;
 	private Comparator<T> comparator;
 	public BST(Comparator<T> c) {

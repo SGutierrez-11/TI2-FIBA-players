@@ -1,6 +1,6 @@
 package collections;
 import java.util.Comparator;
-public class AVL<T> extends BST<T> {
+public class AVL<T> extends BST<T>{
 	public AVL(Comparator<T> c) {
 		super(c);
 	}
