@@ -72,7 +72,7 @@
                   <Font name="Times New Roman Bold Italic" size="13.0" />
                </font>
             </Label>
-            <Button layoutX="244.0" layoutY="321.0" mnemonicParsing="false" prefHeight="24.0" prefWidth="136.0" text="Return">
+            <Button layoutX="244.0" layoutY="321.0" mnemonicParsing="false" onAction="#returnToMainPane" prefHeight="24.0" prefWidth="136.0" text="Return">
                <font>
                   <Font name="Times New Roman Bold Italic" size="17.0" />
                </font>
