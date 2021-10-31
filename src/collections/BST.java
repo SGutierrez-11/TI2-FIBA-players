@@ -108,7 +108,7 @@ public class BST<T> implements BSTInterface<T>{
 		List<T> list = inOrderRight(root);
 		int i = Collections.binarySearch(list, t, comparator);
 		if (i >= 0)
-			return list.subList(0, i);
+			return list.subList(0, i+1);
 		else {
 			if (comparator.compare(t, list.get(list.size()-1)) > 0)
 				return list;
