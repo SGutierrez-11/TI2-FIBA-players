@@ -71,21 +71,21 @@ public class BST<T> {
 			}
 		}
 	}*/
-	public Node<T> search(T item) {
+	public Node<T> search(T t) {
 		if (root == null)
 			return null;
 		else
-			return search(item, root);
+			return search(t, root);
 	}
-	private Node<T> search(T item, Node<T> parent) {
+	private Node<T> search(T t, Node<T> parent) {
 		if (parent == null)
 			return null;
-		else if (comparator.compare(item, parent.getValue().get(0))==0)
+		else if (comparator.compare(t, parent.getValue().get(0)) == 0)
 			return parent;
-		else if (comparator.compare(item, parent.getValue().get(0)) < 0)
-			return search(item, parent.getLeft());
+		else if (comparator.compare(t, parent.getValue().get(0)) < 0)
+			return search(t, parent.getLeft());
 		else
-			return search(item, parent.getRight());
+			return search(t, parent.getRight());
 	}
 	public List<T> getGreaterThan(Node<T> node){
 		List<T> list = new ArrayList<>();
