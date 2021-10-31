@@ -93,8 +93,9 @@ public class BST<T> {
 	}
 	private List<T> getGreaterThan(Node<T> node, List<T> list){
 		list.addAll(node.getValue());
-		list.addAll(inOrderRight(node.getRight(), list));
-		if (node.getParent().getLeft().equals(node))
+		if (node.getRight() != null)
+			list.addAll(inOrderRight(node.getRight(), list));
+		if (node.getParent() != null && node.getParent().getLeft().equals(node))
 			list.addAll(getGreaterThan(node.getParent(), list));
 		return list;
 	}
@@ -104,8 +105,9 @@ public class BST<T> {
 	}
 	private List<T> getLessThan(Node<T> node, List<T> list){
 		list.addAll(node.getValue());
-		list.addAll(inOrderLeft(node.getLeft(), list));
-		if (node.getParent().getRight().equals(node))
+		if (node.getLeft() != null)
+			list.addAll(inOrderLeft(node.getLeft(), list));
+		if (node.getParent() != null && node.getParent().getRight().equals(node))
 			list.addAll(getLessThan(node.getParent(), list));
 		return list;
 	}
