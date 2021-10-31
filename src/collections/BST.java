@@ -95,8 +95,9 @@ public class BST<T> implements BSTInterface<T>{
 		list.addAll(node.getValue());
 		if (node.getRight() != null)
 			list.addAll(inOrderRight(node.getRight(), list));
-		if (node.getParent() != null && node.getParent().getLeft().equals(node))
-			list.addAll(getGreaterThan(node.getParent(), list));
+		Node<T> parent = node.getParent();
+		if ((parent != null && parent.getLeft() != null)&& parent.getLeft().equals(node))
+			list.addAll(getGreaterThan(parent, list));
 		return list;
 	}
 	public List<T> getLessThan(Node<T> node){
@@ -107,8 +108,9 @@ public class BST<T> implements BSTInterface<T>{
 		list.addAll(node.getValue());
 		if (node.getLeft() != null)
 			list.addAll(inOrderLeft(node.getLeft(), list));
-		if (node.getParent() != null && node.getParent().getRight().equals(node))
-			list.addAll(getLessThan(node.getParent(), list));
+		Node<T> parent = node.getParent();
+		if ((parent != null && parent.getRight() != null) && parent.getRight().equals(node))
+			list.addAll(getLessThan(parent, list));
 		return list;
 	}
 	public List<T> inOrderRight(Node<T> node){
