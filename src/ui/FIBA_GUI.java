@@ -107,6 +107,9 @@ public class FIBA_GUI {
     @FXML
     private RadioButton lessThanRadioButton;
     
+    @FXML
+    private RadioButton equalsRadioButton;
+    
     // *************** LeakTable Pane ************
     @FXML
     private BorderPane leakMainPane;
@@ -209,36 +212,10 @@ public class FIBA_GUI {
     @FXML
     public void LeakByAssistences(MouseEvent event) throws IOException {
 
-    	double condition = Double.parseDouble(conditionTextField.getText());
-    	if(lessThanRadioButton.isSelected()==true) {
-    		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
-        	
-    		initializeLeakTableview(3, condition, 1);
-    		
-    	}else {
-    		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
-        	
-    		initializeLeakTableview(3, condition, 2);
-    		
-    	}
+double condition = Double.parseDouble(conditionTextField.getText());
+    	
+    	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
+    	
     	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
 		fxmlLoader.setController(this);
 		Parent root = fxmlLoader.load();
@@ -248,42 +225,63 @@ public class FIBA_GUI {
     	stage.initOwner(mainPane.getScene().getWindow());
     	stage.setScene(scene);
     	stage.show();
+    	if(lessThanRadioButton.isSelected()==true) {
+    		
+    		//fiba.searchLess(1, condition);
+    		
+        	
+    		initializeLeakTableview(3, condition, 1);
+    	
+    	}else if(moreThanRadioButton.isSelected()) {
+    		
+        	
+    		initializeLeakTableview(3, condition, 2);
+    		
+    		
+    		}else {
+    			
+    		initializeLeakTableview(3, condition, 3);	
+    			
+    		}
+    	}
+    	
     	
     }
 
     @FXML
     public void LeakByBlocks(MouseEvent event) throws IOException {
     	
-    	double condition = Double.parseDouble(conditionTextField.getText());
+double condition = Double.parseDouble(conditionTextField.getText());
+    	
+    	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
     	if(lessThanRadioButton.isSelected()==true) {
     		
+    		//fiba.searchLess(1, condition);
     		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
         	
     		initializeLeakTableview(4, condition, 1);
+    	
+    	}else if(moreThanRadioButton.isSelected()) {
     		
-    	}else {
-    		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
         	
     		initializeLeakTableview(4, condition, 2);
     		
+    		
+    		}else {
+    			
+    		initializeLeakTableview(4, condition, 3);	
+    			
+    		}
     	}
     	
     	
@@ -292,37 +290,37 @@ public class FIBA_GUI {
     @FXML
     public void LeakByBounces(MouseEvent event) throws IOException {
     	
-    	double condition = Double.parseDouble(conditionTextField.getText());
+double condition = Double.parseDouble(conditionTextField.getText());
+    	
+    	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
     	if(lessThanRadioButton.isSelected()==true) {
     		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
-        	
+    		//fiba.searchLess(1, condition);
     		
+        	
     		initializeLeakTableview(2, condition, 1);
+    	
+    	}else if(moreThanRadioButton.isSelected()) {
     		
-    	}else {
-    		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
         	
-    		
     		initializeLeakTableview(2, condition, 2);
     		
+    		
+    		}else {
+    			
+    		initializeLeakTableview(2, condition, 3);	
+    			
+    		}
     	}
     	
     }
@@ -331,71 +329,76 @@ public class FIBA_GUI {
     public void LeakByPoints(MouseEvent event) throws IOException {
 
     	double condition = Double.parseDouble(conditionTextField.getText());
+    	
+    	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
     	if(lessThanRadioButton.isSelected()==true) {
     		
     		//fiba.searchLess(1, condition);
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
+    		
         	
     		initializeLeakTableview(1, condition, 1);
-    	}else {
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
+    	
+    	}else if(moreThanRadioButton.isSelected()) {
+    		
         	
     		initializeLeakTableview(1, condition, 2);
     		
     		
+    		}else {
+    			
+    		initializeLeakTableview(1, condition, 3);	
+    			
+    		}
     	}
-    	
     	
     }
 
     @FXML
     public void leakBySteals(MouseEvent event) throws IOException {
     	
-    	double condition = Double.parseDouble(conditionTextField.getText());
+double condition = Double.parseDouble(conditionTextField.getText());
+    	
+    	if(lessThanRadioButton.isSelected()||moreThanRadioButton.isSelected()||equalsRadioButton.isSelected()) {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
+		fxmlLoader.setController(this);
+		Parent root = fxmlLoader.load();
+		Scene scene = new Scene(root);
+    	Stage stage = new Stage();
+    	stage.initModality(Modality.WINDOW_MODAL);
+    	stage.initOwner(mainPane.getScene().getWindow());
+    	stage.setScene(scene);
+    	stage.show();
     	if(lessThanRadioButton.isSelected()==true) {
     		
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
+    		//fiba.searchLess(1, condition);
+    		
         	
     		initializeLeakTableview(5, condition, 1);
+    	
+    	}else if(moreThanRadioButton.isSelected()) {
     		
-    	}else {
-    		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("leakPaneTable.fxml"));
-    		fxmlLoader.setController(this);
-    		Parent root = fxmlLoader.load();
-    		Scene scene = new Scene(root);
-        	Stage stage = new Stage();
-        	stage.initModality(Modality.WINDOW_MODAL);
-        	stage.initOwner(mainPane.getScene().getWindow());
-        	stage.setScene(scene);
-        	stage.show();
         	
     		initializeLeakTableview(5, condition, 2);
     		
+    		
+    		}else {
+    			
+    		initializeLeakTableview(5, condition, 3);	
+    			
+    		}
     	}
+    	
     	
     }
     public void initializeLeakTableview(int tree, double condition, int choose) {
@@ -406,10 +409,13 @@ public class FIBA_GUI {
     	
     	if(choose==1) {	
     	observableList = FXCollections.observableArrayList(fiba.searchLess(tree, condition));
-    	}else {
+    	}else if(choose==2){
     	observableList = FXCollections.observableArrayList(fiba.searchMore(tree, condition));
     	
     	//System.out.println("Es Nulo aqui");
+    	}else {
+    	observableList = FXCollections.observableArrayList(fiba.searchEquals(tree, condition));
+    		
     	}
     	if(leakTableView==null) {
     		System.out.println("ObservableList es null");

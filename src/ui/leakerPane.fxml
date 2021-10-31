@@ -77,7 +77,7 @@
                   <Font name="Times New Roman Bold Italic" size="17.0" />
                </font>
             </Button>
-            <RadioButton fx:id="moreThanRadioButton" layoutX="360.0" layoutY="200.0" mnemonicParsing="false" text="More Than" textFill="WHITE">
+            <RadioButton fx:id="moreThanRadioButton" layoutX="421.0" layoutY="200.0" mnemonicParsing="false" text="More Than" textFill="WHITE">
                <font>
                   <Font name="Times New Roman Bold Italic" size="13.0" />
                </font>
@@ -85,7 +85,12 @@
                   <ToggleGroup fx:id="condition" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="lessThanRadioButton" layoutX="181.0" layoutY="200.0" mnemonicParsing="false" text="Less Than" textFill="WHITE" toggleGroup="$condition">
+            <RadioButton fx:id="lessThanRadioButton" layoutX="136.0" layoutY="200.0" mnemonicParsing="false" text="Less Than" textFill="WHITE" toggleGroup="$condition">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="13.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="equalsRadioButton" layoutX="273.0" layoutY="200.0" mnemonicParsing="false" text="Equals" textFill="WHITE" toggleGroup="$condition">
                <font>
                   <Font name="Times New Roman Bold Italic" size="13.0" />
                </font>
